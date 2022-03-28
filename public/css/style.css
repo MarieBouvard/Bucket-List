@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+}
+
+header {
+    background-color: black;
+    color: white;
+}
+
+p {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+h1 {
+    font-weight: 600;
+}
+
+main {
+    min-height: 90vh;
+}
+
+footer {
+    background-color: black;
+    color: white;
+}
+
