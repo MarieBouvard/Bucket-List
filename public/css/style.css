@@ -4,11 +4,6 @@ body {
     background-color: antiquewhite;
 }
 
-header {
-    background-color: black;
-    color: white;
-}
-
 p {
     font-family: 'Nanum Gothic', sans-serif;
 }
@@ -22,7 +17,6 @@ main {
 }
 
 footer {
-    background-color: black;
     color: white;
 }
 

@@ -26,13 +26,14 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand"
             ><img
             src="{{ asset('img/Logo.png') }}"
               alt="Logo"
               width="80"
+              class="bg-light"
           /></a>
           <button
             class="navbar-toggler"
@@ -48,15 +49,15 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ path('app_home') }}"
+                <a class="nav-link active text-white" aria-current="page" href="{{ path('app_home') }}"
                   >Accueil - BucketList</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_home') }}">Lieux à voir</a>
+                <a class="nav-link text-white" href="{{ path('wish_list') }}">Liste des idées</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_home') }}">Circuits proposés</a>
+                <a class="nav-link text-white" href="{{ path('app_about_us') }}">A propos de nous</a>
               </li>
             </ul>
           </div>
@@ -68,7 +69,7 @@
 
 
 
-    <footer class="text-center">
+    <footer class="text-center bg-dark">
       &copy; Bucket-List
       {{ date() | date('Y') }}
     </footer>
