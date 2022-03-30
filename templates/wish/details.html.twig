@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Détails {{ wish.title }} | {{ parent() }} {% endblock %}
+
+{% block main %}
+
+<h2> {{ wish.title }} </h2>
+<h3>Cette idée est proposée par {{ wish.author }}</h3>
+    {% if wish.description %} 
+        <p> Description de l'idée : {{ wish.description }}</p>
+    {% endif %}
+    <p>Idée créée le : {{ wish.dateCreated | date('m/d/Y') }}</p>
+
+{% endblock %}

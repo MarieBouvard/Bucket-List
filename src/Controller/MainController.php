@@ -8,23 +8,18 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MainController extends AbstractController
 {
-    /**
+   /**
      * @Route("/", name="app_home")
      */
     public function index(): Response
     {
-        $h1 = 'Bienvenue sur Bucker-List';
-        return $this->render('main/index.html.twig',
-        ['titre1'=>$h1]);
+        return $this->render('main/index.html.twig');
     }
 
-     /**
+    /**
      * @Route("/aboutUs", name="app_about_us")
      */
-    public function aboutUs(): Response
-    {
-        return $this->render('main/aboutUs.html.twig');
+    public function aboutus(): Response {
+        return $this->render('main/aboutus.html.twig');
     }
-
-    
 }
