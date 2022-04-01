@@ -11,15 +11,23 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Knp\Component\Pager\PaginatorInterface;
 
 class WishController extends AbstractController
 {
     /**
      * @Route("/wish", name="wish_list")
      */
-    public function list(WishRepository $repo): Response
+    public function list(Request $request, WishRepository $repo, PaginatorInterface $paginator): Response
     {
         $wishes = $repo->findBy([], ['dateCreated'=>'DESC']);
+
+        $wishes = $paginator->paginate(
+            $wishes, /* query NOT result */
+            $request->query->getInt('page', 1),
+            3 /*limit per page*/
+        );
+
         return $this->render('wish/list.html.twig', compact('wishes'));
     }
 
@@ -41,6 +49,7 @@ class WishController extends AbstractController
     public function add(EntityManagerInterface $em, WishRepository $repo, Request $request): Response {
         $wish = new Wish();
         $form = $this->createForm(WishType::class, $wish);
+    
         $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()) { 

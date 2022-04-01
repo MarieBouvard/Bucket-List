@@ -10,6 +10,7 @@ Détails {{ wish.title }} | {{ parent() }} {% endblock %}
     {% if wish.description %} 
         <p> Description de l'idée : {{ wish.description }}</p>
     {% endif %}
+    <p>Catégorie : {{wish.category.name }}</p>
     <p>Idée créée le : {{ wish.dateCreated | date('m/d/Y') }}</p>
 
 {% endblock %}

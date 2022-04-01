@@ -7,9 +7,10 @@
   <li>
     <a href="{{ path('wish_details', { id: wish.id }) }}"
       >{{ wish.title }}</a
-    >
+    >Catégorie : {{wish.category.name }}
   </li>
   {% endfor %}
 </ul>
+{{ knp_pagination_render(wishes) }}
 
 {% endblock %}

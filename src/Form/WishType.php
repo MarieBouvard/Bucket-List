@@ -14,6 +14,7 @@ class WishType extends AbstractType
     {
         $builder
             ->add('title', null, ['label'=>'Nom de l\'idée'])
+            ->add('category', null, ['label'=>'Catégorie'])
             ->add('description')
             ->add('author', null, ['label'=>'Auteur'])
             ->add('Create', SubmitType::class)
